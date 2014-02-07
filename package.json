@@ -6,7 +6,7 @@
   "contributors": [
     "Adam Hull <adam@hmlad.com>"
   ],
-  "main": "clingwrap",
+  "main": "lib/clingwrap.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/goodeggs/clingwrap.git"
@@ -16,12 +16,18 @@
   "dependencies": {
     "commander": "~2.1.0"
   },
+  "peerDependencies": {
+    "npm": ">=1.3"
+  },
   "devDependencies": {
     "coffee-script": ">=1.7.x",
-    "mocha": "~1.x.x"
+    "mocha": "~1.x.x",
+    "jshint": "~2.4.3",
+    "npm": "~1.3.x",
+    "should": "~3.1.2"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "jshint bin/*.js lib/*.js && mocha"
   },
   "bin": "./bin/cli.js"
 }
