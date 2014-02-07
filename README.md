@@ -7,13 +7,19 @@ Command line tool for predictable npm-shrinkwrap updates.
 $ npm install -g clingwrap
 ```
 
-Update shrinkwrap for a single package and its dependencies:
-```sh
-$ clingwrap update foo-package
 ```
 
-Strip hardcoded npmjs.org urls from shrinkwrap for [faster installs](https://github.com/npm/npm/issues/3581):
-```sh
-$ clingwrap npmbegone
-```
+  Usage: clingwrap [options] [command]
 
+  Commands:
+
+    update <packages>      update shrinkwrap for named package(s) and dependencies
+    npmbegone              strip hardcoded npmjs.org urls from shrinkwrap for faster installs
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+
+
+```
