@@ -14,7 +14,9 @@
   "homepage": "https://github.com/goodeggs/clingwrap",
   "bugs": "https://github.com/goodeggs/clingwrap/issues",
   "dependencies": {
-    "commander": "~2.1.0"
+    "commander": "~2.1.0",
+    "colors": "~0.6.2",
+    "cli-table": "~0.3.0"
   },
   "peerDependencies": {
     "npm": ">=1.3"

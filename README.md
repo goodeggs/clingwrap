@@ -13,7 +13,7 @@ $ npm install -g clingwrap
 
   Commands:
 
-    update <packages>      update shrinkwrap for named package(s) and dependencies
+    sync <packages>        update shrinkwrap for named package(s) and dependencies
     npmbegone              strip hardcoded npmjs.org urls from shrinkwrap for faster installs
 
   Options:
