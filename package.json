@@ -1,0 +1,25 @@
+{
+  "name": "clingwrap",
+  "version": "0.0.0",
+  "description": "Command line tool for predictable npm-shrinkwrap updates",
+  "author": "Good Eggs <open-source@goodeggs.com>",
+  "contributors": [
+    "Adam Hull <adam@hmlad.com>"
+  ],
+  "main": "clingwrap",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goodeggs/clingwrap.git"
+  },
+  "homepage": "https://github.com/goodeggs/clingwrap",
+  "bugs": "https://github.com/goodeggs/clingwrap/issues",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coffee-script": ">=1.7.x",
+    "mocha": "~1.x.x"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
