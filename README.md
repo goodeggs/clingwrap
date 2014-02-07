@@ -9,12 +9,12 @@ $ npm install -g clingwrap
 
 ```
 
-  Usage: clingwrap [options] [command]
+  Usage: clingwrap [npmbegone] <package ...>
 
   Commands:
 
-    sync <packages>        update shrinkwrap for named package(s) and dependencies
     npmbegone              strip hardcoded npmjs.org urls from shrinkwrap for faster installs
+    *                      update or remove shrinkwrap for named package(s) and dependencies
 
   Options:
 

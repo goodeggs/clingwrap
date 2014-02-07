@@ -6,12 +6,23 @@ var pkg = require('../package.json'),
 
 program
   .version(pkg.version)
+  .usage('[npmbegone] <package ...>')
   .on('--help', function () {
     console.log('  '+pkg.description)
   })
 
 program
-  .command('sync *')
+  .command('npmbegone')
+  .description('strip hardcoded npmjs.org urls from shrinkwrap for faster installs')
+  .action(function () {
+    cw.loadExisting(function (err, shrinkwrap) {
+      cw.npmbegone(shrinkwrap)
+      cw.write(shrinkwrap, function () {})
+    })
+  })
+
+program
+  .command('*')
   .usage('<package ...>')
   .description('update or remove shrinkwrap for named package(s) and dependencies')
   .action(function () {
@@ -29,15 +40,6 @@ program
     }))
   })
 
-program
-  .command('npmbegone')
-  .description('strip hardcoded npmjs.org urls from shrinkwrap for faster installs')
-  .action(function () {
-    cw.loadExisting(function (err, shrinkwrap) {
-      cw.npmbegone(shrinkwrap)
-      cw.write(shrinkwrap, function () {})
-    })
-  })
 
 program.parse(process.argv)
 
