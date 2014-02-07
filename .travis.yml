@@ -1,3 +1,11 @@
 language: node_js
 node_js:
-  - '0.10'
+- '0.10'
+deploy:
+  provider: npm
+  email: open-source@goodeggs.com
+  api_key:
+    secure: ENbP06f/qcp+wsEg/Tqj9JoaqEHK8TstuyqYS9NmulKb4gjt8tnXOLajtWUBEsbd5ogorH9LjXcOAh4zipkMlucRG+GcxkE12sj1LUUfgbJnyU6X/w54aYdAah5jOCUVXIDFXGp/XBMVoxqL4MzUmHdT0UwxPLnBOQH/2zc0vQo=
+  on:
+    tags: true
+    repo: goodeggs/clingwrap
