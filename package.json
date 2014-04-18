@@ -6,6 +6,7 @@
   "contributors": [
     "Adam Hull <adam@hmlad.com>"
   ],
+  "license": "MIT",
   "main": "lib/clingwrap.js",
   "repository": {
     "type": "git",
