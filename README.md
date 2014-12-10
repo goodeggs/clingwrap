@@ -9,19 +9,42 @@ $ npm install -g clingwrap
 
 ```
 
-  Usage: clingwrap [npmbegone] <package ...>
+  Usage: clingwrap <package ...>
 
   Commands:
 
-    npmbegone              strip hardcoded npmjs.org urls from shrinkwrap for faster installs
-    *                      update or remove shrinkwrap for named package(s) and dependencies
+    * <package>            Update shrinkwraped tree for named package(s) to match local install
+    npmbegone              Strip hardcoded npmjs.org urls from shrinkwrap for faster installs
 
   Options:
 
     -h, --help     output usage information
     -V, --version  output the version number
 
+```
 
+Examples:
+--------
+
+Add a new package:
+``` sh
+$ npm install underscore@1.5.0 --save
+$ clingwrap underscore
+> underscore 1.5.0
+```
+
+Update an exisiting package:
+``` sh
+ $ npm install underscore@1.6.0 --save
+ $ clingwrap underscore
+ > underscore 1.5.0 → 1.6.0
+```
+
+Remove a package:
+``` sh
+ $ npm uninstall underscore --save
+ $ clingwrap underscore
+ > underscore removed
 ```
 
 ## License

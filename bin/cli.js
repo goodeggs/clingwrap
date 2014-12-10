@@ -6,25 +6,35 @@ var pkg = require('../package.json'),
 
 program
   .version(pkg.version)
-  .usage('[npmbegone] <package ...>')
+  .usage('<package ...>')
   .on('--help', function () {
-    console.log('  '+pkg.description)
-  })
-
-program
-  .command('npmbegone')
-  .description('strip hardcoded npmjs.org urls from shrinkwrap for faster installs')
-  .action(function () {
-    cw.loadExisting(function (err, shrinkwrap) {
-      cw.npmbegone(shrinkwrap)
-      cw.write(shrinkwrap, function () {})
+    [
+      pkg.description,
+      '',
+      'Examples:',
+      '',
+      'Add a new package:',
+      ' $ npm install underscore@1.5.0 --save',
+      ' $ clingwrap underscore',
+      ' > underscore 1.5.0',
+      '',
+      'Update an exisiting package:',
+      ' $ npm install underscore@1.6.0 --save',
+      ' $ clingwrap underscore',
+      ' > underscore 1.5.0 → 1.6.0',
+      '',
+      'Remove a package:',
+      ' $ npm uninstall underscore --save',
+      ' $ clingwrap underscore',
+      ' > underscore removed'
+    ].map(function (line) {
+      console.log('  '+line)
     })
   })
 
 program
-  .command('*')
-  .usage('<package ...>')
-  .description('update or remove shrinkwrap for named package(s) and dependencies')
+  .command('* <package>')
+  .description('Update shrinkwraped metadata tree for named package(s) to match local install')
   .action(function () {
     var packages = Array.prototype.slice.call(arguments, 0, -1)
     if (packages.length < 1)
@@ -38,6 +48,16 @@ program
         }))
       }))
     }))
+  })
+
+program
+  .command('npmbegone')
+  .description('Strip hardcoded npmjs.org urls from shrinkwrap for faster installs')
+  .action(function () {
+    cw.loadExisting(function (err, shrinkwrap) {
+      cw.npmbegone(shrinkwrap)
+      cw.write(shrinkwrap, function () {})
+    })
   })
 
 
