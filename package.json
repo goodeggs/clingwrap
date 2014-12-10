@@ -1,6 +1,6 @@
 {
   "name": "clingwrap",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Command line tool for predictable npm-shrinkwrap updates",
   "author": "Good Eggs <open-source@goodeggs.com>",
   "contributors": [
