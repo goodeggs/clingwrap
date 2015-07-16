@@ -13,7 +13,7 @@ $ npm install -g clingwrap
 
   Commands:
 
-    * <package>            Update shrinkwraped tree for named package(s) to match local install
+    * <package>            Update shrinkwrapped tree for named package(s) to match local install
     npmbegone              Strip hardcoded npmjs.org urls from shrinkwrap for faster installs
 
   Options:
