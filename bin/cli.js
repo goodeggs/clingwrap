@@ -34,7 +34,7 @@ program
 
 program
   .command('* <package>')
-  .description('Update shrinkwraped metadata tree for named package(s) to match local install')
+  .description('Update shrinkwrapped metadata tree for named package(s) to match local install')
   .action(function () {
     var packages = Array.prototype.slice.call(arguments, 0, -1)
     if (packages.length < 1)
